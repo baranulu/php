@@ -1,0 +1,36 @@
+04.03.2025
+-proje klasör yapısı oluştuldu.
+-.env oluştuldu, ortam bilgileri içine eklendi. db vs.
+-database.php oluşturuldu.
+-Config.php oluştuldu. .env den ortam bilgileri okundu.
+---------
+
+06.03.2025
+
+-Base Controller oluşturuldu.
+- Controller client taraftan gelen istekleri yanıt veren,modeli çağıran ve view döndüren bir bileşendir.
+-Base Controller ise 
+    __construct functionu ile başlatım sonrası ayarların çalışmasını sağlayan functiondır. 
+    burada oturum kontrolü uygulama ayarları gibi sayfa açıldığında default çalışmasını istediğimiz özellikler eklenebilir.
+    örneği profil sayfasına gidildiği an ekranın bir köşesinde görünen mail sayısı bu şekilde alınabilir.
+    render functionuda base controller içinde yer alır.
+    render ise aldığı $view ve $data değişkenlerini viewlara gönderip o viewların render olmasını sağlar.
+
+-Route.php
+    route php uygulamada url yönlendirmelerini yönetmektedir.
+    $routes tanımlanan routeları tutar.
+    $middlewares middleware varsa bu değişkende tutulur.
+    -add functionu uygulamaya route eklemek için kullanılır.
+    -add functionunda return new static diyerek zincirleme function çağrımı yapılmasına olanak sağlar. bu durum o route'a middleware eklenebilmesi için gereklidir.
+    - dispatch fonksiyonu Gelen URL isteğini, tanımlı rotalar (routes) arasından uygun olanla eşleştirip ilgili controller sınıfı ve metodu çağırır.
+
+-vendor 
+-composer json 
+    projede kullanılan bağımlılıklarını ve proje yapılandırmasını içerir.
+    kullanılan php paketlerini ve kütüphanelerini tanımlar.
+    php sürüm gibi gereksinimleri belirler
+    autoload ayarlarını içerir.
+-composer.lock    
+    composer json tarafından tanımlanan bağımlılıkların kesin sürümlerini içerir.
+    porjede kullanılan paket sürüm bilgilerini saklar.
+-middleware

@@ -1,0 +1,32 @@
+body {
+    background-color: #f8f9fa;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.error-container {
+    text-align: center;
+}
+
+.error-container h1 {
+    font-size: 120px;
+    font-weight: bold;
+    color: #dc3545;
+}
+
+.error-container h2 {
+    font-size: 36px;
+    color: #6c757d;
+}
+
+.error-container p {
+    font-size: 18px;
+    color: #495057;
+}
+
+.btn-custom {
+    margin-top: 20px;
+}

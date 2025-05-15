@@ -1,0 +1,4 @@
+[2025-04-23 16:05:03] Genel hata: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+[2025-04-23 16:05:14] Genel hata: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+[2025-04-23 16:06:13] Genel hata: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+[2025-04-23 16:10:59] Genel hata: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'admin' for key 'users.username'

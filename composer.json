@@ -1,0 +1,20 @@
+{
+    "name": "admin/sattinsattinv1",
+    "description": "php mvc yapısı",
+    "autoload": {
+        "psr-4": {
+           "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "barzzz"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.9",
+        "twbs/bootstrap": "^5.3",
+        "vlucas/phpdotenv": "^5.6",
+        "firebase/php-jwt": "^6.11"
+    }
+}
