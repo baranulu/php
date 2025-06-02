@@ -1,10 +1,10 @@
-<!-- ## 📌 Route Yapılandırması ve Kullanımı public/index.php
+<!--  Route Yapılandırması ve Kullanımı public/index.php
 
 Bu dokümanda, MVC mimarisine sahip PHP tabanlı bir projede **Route** yönetiminin nasıl yapıldığını adım adım anlatacağız.
  
 ---
 
-### **1️⃣ Route Nedir?**
+### Route Nedir?**
 
 **Route**, kullanıcının tarayıcıda belirli bir URL'ye eriştiğinde hangi **Controller** ve **Metodun** çağrılacağını belirleyen bir yapılandırmadır.
 
@@ -20,6 +20,7 @@ ini_set('display_errors', 1); // Hataları ekranda göster
 define('ROOT', __DIR__ . '/..'); //  Proje kök dizinini belirler.);
 require_once __DIR__ . '/../vendor/autoload.php';   //Composer autoload dosyasını projeye dahil eder.
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 
 use App\Middleware\AuthMiddleware;
 use App\Core\Route;
@@ -32,6 +33,11 @@ Route::add('blog', 'Front\BlogController@index');
 Route::add('blog/detail/{slug}', 'Front\BlogController@detail');
 Route::add('auth/login', 'Front\AuthController@login');
 Route::add('auth/register', 'Front\AuthController@register');
+Route::add('areas/user/UserDashboard', 'Front\DashboardController@index');
+Route::add('areas/user/UpdateUserInformation', 'Front\DashboardController@updateInformation');
+Route::add('areas/user/AddAdvert', 'Front\AdvertController@index');
+
+
 
 
 // Bu rotalar:

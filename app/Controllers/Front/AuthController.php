@@ -6,6 +6,7 @@ use App\Models\User;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key; 
 use App\Core\Config;
+use EmptyIterator;
 
 class AuthController extends BaseController
 {
@@ -40,7 +41,6 @@ class AuthController extends BaseController
                 $_SESSION['username'] = $loginData->value->username;
                 $_SESSION['role_id'] = $loginData->value->role_id;
 
-                
                 $_SESSION['TOKEN'] = $this->createToken($loginData->value->id, $loginData->value->email);
                 
                 // Başarıyla giriş yapıldıysa anasayfaya yönlendiriyoruz
@@ -66,17 +66,21 @@ function register()
     
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-            $name = $_POST['username'] ?? '';
+            $username = $_POST['username'] ?? '';
             $email = $_POST['email'] ?? '';
             $password = $_POST['password'] ?? '';
+            $role_id=2;
+            $phone= $_POST['phone'] ??'';
+            $name =$_POST['name']??'';
+            $surname= $POST['surname']??'';
     
             // Veri doğrulama
-            if (empty($name) || empty($email) || empty($password)) {
+            if (empty($username) || empty($phone) || empty($email) || empty($password)) {
                 $response->exception = 'Tüm alanlar zorunludur.';
             } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $response->exception = 'Geçerli bir e-posta adresi girin.';
             } else {
-                $registerData = $this->userModel->addUser($name, $email, $password);
+                $registerData = $this->userModel->addUser($username, $email, $password,$role_id,$name,$surname,$phone);
     
                 if ($registerData->result) {
                     header('Location: /auth/login');

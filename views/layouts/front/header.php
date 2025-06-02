@@ -86,7 +86,7 @@
                                 </ul>
                                 <?php else:?>
                             <ul class="dropdown-menu" aria-labelledby="userDropdown">
-                                <li><a class="dropdown-item text-decoration-none" href="/customer"><i class="fas fa-user"></i> Profil</a></li>
+                                <li><a class="dropdown-item text-decoration-none" href="/areas/user/UserDashboard"><i class="fas fa-user"></i> Profil</a></li>
                                 <li><a class="dropdown-item text-decoration-none" href="/order"><i class="fas fa-receipt"></i> Siparişlerim</a></li>
                                 <li><a class="dropdown-item text-decoration-none" href="/cart"><i class="fas fa-shopping-cart"></i> Sepetim</a></li>
                                 <li><a class="dropdown-item text-decoration-none" href="auth/login"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a></li>

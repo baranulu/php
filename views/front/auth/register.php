@@ -54,8 +54,23 @@
               </div>
 
               <div class="mb-3">
+                <label for="name" class="form-label">Ad</label>
+                <input type="name" class="form-control" id="name" name="name" placeholder="Adınız">
+              </div>
+
+                 <div class="mb-3">
+                <label for="surname" class="form-label">Soyad</label>
+                <input type="surname" class="form-control" id="surname" name="surname" placeholder=" Soyadınız">
+              </div>
+
+              <div class="mb-3">
                 <label for="email" class="form-label">E-posta</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="ornek@mail.com">
+              </div>
+
+               <div class="mb-3">
+                <label for="phone" class="form-label">Telefon Numarası</label>
+                <input type="phone" class="form-control" id="phone" name="phone" placeholder="(555)-555-55-55">
               </div>
 
               <div class="mb-3">
