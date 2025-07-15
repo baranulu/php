@@ -4,8 +4,10 @@ namespace App\Controllers\Front;
 
 use App\Core\BaseController;
 use App\Core\BaseDashboardController;
+use App\Models\ServiceResponse;
+use Exception;
 
-class BrandController extends BaseDashboardController
+class BrandController extends BaseController
 {
     private $brandModel;
     private $brandProductModel;
@@ -15,16 +17,4 @@ class BrandController extends BaseDashboardController
         $this->brandModel = $this->loadModel('brand');
         $this->brandProductModel = $this->loadModel('brandProduct');
     }
-
-    public function GetBrandAndBrandProduct()
-     {
-        $categoryId= $_GET['category_id']?? null;
-
-        if (empty($categoryId) || !is_numeric($categoryId) || $categoryId <= 0) {
-        return $this->jsonError("Geçersiz kategori ID", "VALIDATION_ERROR");
-
-        
-    }
-
-     }
 }

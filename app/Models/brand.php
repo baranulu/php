@@ -19,7 +19,6 @@ class Brand extends BaseModel{
 
     public function GetBrands($categoryId){
 
-
         $db=$this->db;
         
         try{
@@ -60,15 +59,16 @@ class Brand extends BaseModel{
                 {
                 $brand['Products'][] =$product;
                 }
-            }
+            }   
         }
-
+    
         return ServiceResponse::success($parentBrands,"Marka ve Ürün bilgileri başarıyla getirildi.");
            
         }
         catch(PDOException $ex)
         {
         error_log($ex->getMessage());
+        
         return ServiceResponse::error("Veritabanı hatası oluştu", "DB_ERROR");
         }
         catch(Exception $ex)
@@ -79,7 +79,7 @@ class Brand extends BaseModel{
     }
 
     private function categoryExists($categoryId) {
-    $query = $this->db->prepare("SELECT COUNT(*) FROM categories WHERE id = :id");
+    $query = $this->db->prepare("SELECT COUNT(*) FROM category WHERE id = :id");
     $query->bindParam(":id", $categoryId);
     $query->execute();
     return $query->fetchColumn() > 0;
@@ -90,3 +90,4 @@ class Brand extends BaseModel{
 <!-- kendime not.
 
 PDO dönüş tiplerini hafızaya al. -->
+

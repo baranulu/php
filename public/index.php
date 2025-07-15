@@ -38,6 +38,8 @@ Route::add('areas/user/UpdateUserInformation', 'Front\DashboardController@update
 Route::add('areas/user/AddAdvert', 'Front\AdvertController@index');
 
 
+Route::add('areas/user/api/getBrandAndProductsBySubCategoryId', 'Front\DashboardController@GetBrandAndBrandProduct');
+
 
 
 // Bu rotalar:
@@ -52,8 +54,11 @@ if ($uri === '') {
 }
 
 try {
+    echo($uri);
     Route::dispatch($uri);
 } catch (Exception $e) {
+
+ error_log((new DateTime())->format('Y-m-d H:i:s').''. $e->getMessage());
     (new BaseController())->renderErrors('front/errors/404', 404);
 }
 

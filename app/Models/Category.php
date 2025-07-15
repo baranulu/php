@@ -18,7 +18,7 @@ class Category extends BaseModel
 
     public function getActiveCategories(): array
 {
-    $db = $this->db;
+    $db = $this->db;    
 
     try {
         $query = $db->prepare("SELECT * FROM category WHERE isActive = 1");
